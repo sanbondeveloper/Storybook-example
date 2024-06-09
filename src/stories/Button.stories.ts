@@ -23,7 +23,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+// args에 지정된 값이 컴포넌트를 렌더링하는 데 어떻게 사용되고 컨트롤 탭에 표시되는 값과 일치하는 확인할 수 있다.
 export const Primary: Story = {
   args: {
     primary: true,

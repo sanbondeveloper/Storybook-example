@@ -34,6 +34,39 @@ Storybook은 앱과 함께 제공되는 작은 개발 전용 워크샵으로 패
 
 Storybook은 UI 컴포넌트와 해당 스토리의 대화형 디렉토리입니다. 과거에는 앱을 실행하고 페이지로 이동한 다음 UI를 올바른 상태로 조정해야 했습니다. Storybook을 사용하면 특정 상태의 UI 컴포넌트로 바로 이동할 수 있습니다.
 
+## 스토리
+
+https://storybook.js.org/docs/get-started/whats-a-story
+
+스토리는 UI 컴포넌트의 렌더링된 상태를 캡처합니다. 개발자는 컴포넌트가 지원할 수 있는 모든 상태를 설명하는 스토리를 컴포넌트당 여러 개 작성할 수 있습니다.
+
+스토리는 컴포넌트 예제 작성을 위한 ES6 모듈 기반 표준인 Component Story Format(CSF)으로 작성됩니다.
+
+> **Component Story Format(CSF)**<br/>스토리 작성에 권장되는 방식입니다. ES6 모듈을 기반으로 하는 개방형 표준으로 Storybook을 넘어 이식할 수 있습니다.
+
+```ts
+// Button.stories.ts|tsx
+
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Button } from './Button';
+
+const meta: Meta<typeof Button> = {
+  component: Button,
+};
+
+export default meta;
+type Story = StoryObj<typeof Button>;
+
+// args에 지정된 값이 컴포넌트를 렌더링하는 데 어떻게 사용되고 컨트롤 탭에 표시되는 값과 일치하는 확인할 수 있다.
+export const Primary: Story = {
+  args: {
+    primary: true,
+    label: 'Button',
+  },
+};
+```
+
 ## React & Vite에서 설치
 
 ### 요구 사항
