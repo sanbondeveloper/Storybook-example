@@ -33,3 +33,19 @@ Storybook은 앱과 함께 제공되는 작은 개발 전용 워크샵으로 패
 ### 모든 스토리를 추적할 수 있다.
 
 Storybook은 UI 컴포넌트와 해당 스토리의 대화형 디렉토리입니다. 과거에는 앱을 실행하고 페이지로 이동한 다음 UI를 올바른 상태로 조정해야 했습니다. Storybook을 사용하면 특정 상태의 UI 컴포넌트로 바로 이동할 수 있습니다.
+
+## React & Vite에서 설치
+
+### 요구 사항
+
+- React 16.8 이상
+- Vite 4.0 이상
+- Storybook 8.0 이상
+
+### 설치
+
+```
+npm create vite@latest storybook-example -- --template react-ts
+npx storybook@latest init // 설치
+npm run storybook // 실행
+```
