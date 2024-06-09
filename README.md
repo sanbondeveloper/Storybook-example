@@ -67,6 +67,17 @@ export const Primary: Story = {
 };
 ```
 
+## Addons
+
+https://storybook.js.org/docs/get-started/browse-stories#addons
+
+스토리북의 핵심 기능을 확장하는 플러그인입니다. Storybook 하단의 예약된 위치인 Addons 패널에서 찾을 수 있습니다. 각 탭에는 선택한 스토리에 대해 생성된 메타데이터, 로그 또는 정적 분석이 표시됩니다.
+
+- Controls : 컴포넌트의 인수(입력)와 동적으로 상호작용할 수 있습니다.
+- Actions : 콜백을 통해 상호작용이 올바른 출력을 생성하는지 확인하는 데 도움이 됩니다.
+- Interactions : 플레이 기능으로 인터렉션 테스트를 디버깅하는 데 유용한 사용자 인터페이스를 제공합니다.
+- Visual Tests : 이 기능을 사용하면 Storybook에서 바로 피드백을 제공하여 로컬 개발 환경의 UI 버그를 찾아낼 수 있습니다.
+
 ## React & Vite에서 설치
 
 ### 요구 사항
