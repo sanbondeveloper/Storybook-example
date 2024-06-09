@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Storybook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+데이터, API 또는 비즈니스 로직으로 벗어나 UI 컴포넌트와 페이지를 독립적으로 구축할 수 있는 프론트엔드 워크샵으로 UI 개발, 테스트 및 문서화를 제공해준다.
 
-Currently, two official plugins are available:
+- 내구성이 뛰어난 UI를 개발할 수 있다.
+- 팀이 재사용할 수 있도록 UI를 문서화할 수 있다.
+- 스토리를 통해 UI가 실제로 어떻게 작동하는지 공유할 수 있다.
+- CI 단계에 추가하여 UI 테스트를 자동화할 수 있다.
+- 스토리를 한번 작성하면 다양한 개발 환경에서 재사용할 수 있다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> **프론트엔드 워크샵**<br/>애플리케이션 환경 외부에서 UI 코드를 작성할 수 있는 환경
 
-## Expanding the ESLint configuration
+## Storybook을 사용하는 이유
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+https://storybook.js.org/docs/get-started/why-storybook
 
-- Configure the top-level `parserOptions` property like this:
+웹의 보편성으로 인해 프론트엔드의 복잡성이 더욱 커지고 있습니다. 반응형 웹 디자인으로 디바이스 크기 등에 따라 사용자는 서로 다른 UI를 보게 되었습니다. 이렇게 사용자가 사용하는 UI에는 디바이스, 브라우저, 접근성, 성능, 비동기 상태 등 추가적인 요구 사항이 생겼습니다.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+React, Vue 3, Angular 등 컴포넌트 기반 도구는 복잡한 UI를 단순한 컴포넌트로 분해하는 데 도움을 주지만 비즈니스 로직, 인터랙티브 상태, 앱 컨텍스트에 얽혀 있어 디버깅하기가 어렵고, 문제를 더욱 복잡하게 만들 수 있습니다.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### UI를 독립적으로 구축할 수 있다.
+
+컴포넌트의 강력한 장점은 렌더링 방식을 확인하기 위해 전체 앱을 실행할 필요가 없다는 것입니다. props을 전달하거나 데이터를 모킹하거나 이벤트를 가짜로 만들어 특정 변형을 따로 렌더링할 수 있습니다.
+
+Storybook은 앱과 함께 제공되는 작은 개발 전용 워크샵으로 패키징되어 있습니다. 앱 비즈니스 로직 및 컨텍스트의 간섭 없이 컴포넌트를 렌더링할 수 있는 환경을 제공합니다. 이를 통해 컴포넌트의 각 변형, 심지어 도달하기 어려운 엣지 케이스까지 테스트할 수 있습니다.
+
+### UI 변형을 스토리로 캡처할 수 있다.
+
+스토리는 컴포넌트 변형을 시뮬레이션하기 위해 props와 mock data를 제공하는 선언적 구문입니다. 각 컴포넌트는 여러 개의 스토리를 가질 수 있습니다. 각 스토리를 통해 해당 컴포넌트의 특정 변형을 시연하여 모양과 동작을 검증할 수 있습니다.
+
+세분화된 UI 컴포넌트 변형을 위한 스토리를 작성한 다음 개발, 테스트 및 문서화에서 해당 stories를 사용합니다.
+
+### 모든 스토리를 추적할 수 있다.
+
+Storybook은 UI 컴포넌트와 해당 스토리의 대화형 디렉토리입니다. 과거에는 앱을 실행하고 페이지로 이동한 다음 UI를 올바른 상태로 조정해야 했습니다. Storybook을 사용하면 특정 상태의 UI 컴포넌트로 바로 이동할 수 있습니다.
